@@ -1,0 +1,3 @@
+create-jdbc-connection-pool --datasourceclassname com.mysql.jdbc.jdbc2.optional.MysqlDataSource --restype javax.sql.DataSource --property portNumber=3306:password=ptvr16weblibrary:user=ptvr16weblibrary:serverName=localhost:databaseName=ptvr16weblibrary:useUnicode=true:characterEncoding=utf8 ptvr16weblibraryPool
+
+create-jdbc-resource --connectionpoolid ptvr16weblibraryPool jdbc/ptvr16weblibraryDS
