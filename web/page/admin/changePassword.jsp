@@ -5,11 +5,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Изменение пароля</title>
     </head>
-    <body><div class="col-md-12">
-        <div style="text-align: center; font-family: cursive;">
+    <body><div class="col-md-6">
+        <div style=" font-family: fantasy;">
         <h1>Изменить пароль</h1>
         </div>
-            <div style="text-align: center; font-family: cursive;">
+            <div style="text-align: center; font-family: fantasy;">
         <form action="changePassword" method="POST">
         <br>
         Введите действующий пароль:
@@ -21,9 +21,9 @@
          Повторите пароль:
         <input type="password" name="newPassword2">
         <br><br>
-        <input type="submit" class="btn btn-warning" value="Изменить пароль">
+        <input type="submit" class="btn btn-danger" value="Изменить пароль"><br>
         </form>
-        <a href="index">Главная страница</a><br>
+                <br><a href="index"><button class="btn btn-danger">Главная страница</button></a><br>
         </div>
         </div>
     </body>

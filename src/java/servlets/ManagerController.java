@@ -1,6 +1,7 @@
 package servlets;
 
 import entity.Cover;
+import entity.History;
 import entity.Product;
 import entity.User;
 import java.io.IOException;
@@ -33,6 +34,8 @@ import utils.PagePathLoader;
     "/showAddNewBuyer",
     "/addNewBuyer",
     "/showUploadFile",
+    "/showReturnPizza",
+    "/returnPizza",
     
     
     
@@ -101,6 +104,19 @@ public class ManagerController extends HttpServlet {
             case "/showUploadFile":
                 request.getRequestDispatcher(PagePathLoader.getPagePath("showUploadFile")).forward(request, response);
                 break;
+            case "/showReturnPizza":
+                List<History> listHistories = historyFacade.findGivenPizza();
+                request.setAttribute("listHistories", listHistories);
+                request.getRequestDispatcher(PagePathLoader.getPagePath("showReturnPizza")).forward(request, response);
+                break;
+            case "/returnPizza":
+                String historyId = request.getParameter("returnHistoryId");
+                History history = historyFacade.find(new Long(historyId));
+                if(history == null){
+                    request.setAttribute("info", "Такой пиццы не заказано");
+                    request.getRequestDispatcher(PagePathLoader.getPagePath("managerIndex")).forward(request, response);
+                    return;
+                }       
             default:   
                 request.setAttribute("info", "Нет такой странички");
                 request.getRequestDispatcher(PagePathLoader.getPagePath("managerIndex")).forward(request, response);         

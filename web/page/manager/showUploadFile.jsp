@@ -12,13 +12,13 @@
         <title>Загрузка файла</title>
     </head>
     <body><div class="col-md-12">
-        <div style=" font-family: cursive;">
+        <div style=" font-family: fantasy;">
         <h1>Загрузка файла!</h1>
         <p>${info}</p>
         <form action="uploadFile" method="POST" enctype="multipart/form-data">
             <input type="text" name="description"><br><hr>
-            <input type="file" class="btn btn-warning" name="file"><br><br>
-            <input type="submit" class="btn btn-warning" value="Загрузить">
+            <input type="file" class="btn btn-danger" name="file"><br><br>
+            <input type="submit" class="btn btn-danger" value="Загрузить">
             </div>
         </div>
         </form>

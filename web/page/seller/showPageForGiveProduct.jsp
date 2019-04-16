@@ -7,10 +7,10 @@
         <title>Магазин</title>
     </head>
     <body><div class="col-md-12">
-        <div style=" font-family: cursive;">
+        <div style=" font-family: fantasy;">
         <h1>Выдать товар покупателю</h1>
         ${info}<br><hr>
-        <a href="index"><button class="btn btn-warning">Главная страница</button></a><br><hr>
+        <a href="index"><button class="btn btn-danger">Главная страница</button></a><br><hr>
         <form action="giveProduct" method="POST">
             <select name="productId">
                 <c:forEach var="productItem" items="${listProducts}">
@@ -25,7 +25,7 @@
             <br>
            
        <br>
-            <input type="submit" class="btn btn-warning" value="Продать">
+            <input type="submit" class="btn btn-danger" value="Продать">
             </div>
         </div>
         </form>

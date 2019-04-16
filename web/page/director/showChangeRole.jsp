@@ -7,7 +7,7 @@
         <title>Admin panel</title>
     </head>
     <body><div class="col-md-12">
-        <div style=" font-family: cursive;">
+        <div style=" font-family: fantasy;">
         <h1>Страница Админа</h1>
         Список пользователей:
         <BR><hr>
@@ -28,7 +28,7 @@
                 </c:forEach>
             </select>
                     <br><br>
-            <p><input type="submit" class="btn btn-warning" value="Назначить"></p>
+            <p><input type="submit" class="btn btn-danger" value="Назначить"></p>
             <a href="index">Главная страница</a><br>
             </div>
         </div>

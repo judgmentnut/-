@@ -8,10 +8,10 @@
         <title>Магазин</title>
     </head>
     <body><div class="col-md-12">
-        <div style="font-family: cursive;">
+        <div style="font-family: fantasy;">
         <h1>Список продуктов</h1>
         ${info}<br><hr>
-        <a href="index"><button class="btn btn-warning">Главная страница</button></a><br><hr>
+        <a href="index"><button class="btn btn-danger">Главная страница</button></a><br><hr>
         <ul>
             <c:forEach var="product" items="${listProducts}">
                 <li>${product.name}, ${product.price}, ${product.count}

@@ -1,10 +1,10 @@
 
        <div class="col-md-12">
-        <div style="font-family: cursive;">
+        <div style="font-family: fantasy;">
             <h1>Добро пожаловать в наш магазин</h1>
             <h3>Зарегистрируйтесь чтобы продолжить</h3>
         ${info}<br>
-        <a href="index">Главная страница</a><br>
+        <a href="index"><button class="btn btn-danger">Главная страница</button></a><br>
         <br>
         
         <form action="registration" method="POST">
@@ -24,7 +24,7 @@
             Повторите пароль:<br>
             <input type="text" name="password2"><br>
             <br>
-            <input type="submit" class="btn btn-warning" value="Зарегистрироваться">
+            <input type="submit" class="btn btn-danger" value="Зарегистрироваться">
             </div>
             </div>
         </form>
