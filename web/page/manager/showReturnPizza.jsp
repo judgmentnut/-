@@ -12,20 +12,26 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Пиццерия</title>
     </head>
-    <body>
-        <h1>Вернуть пиццу</h1>
-        ${info}<br>
-        <a href="index">Главная страница</a><br>
+    <body><div class="col-md-12">
+        <div style="font-family: fantasy;">
+        <h1>Завершение заказа</h1>
+        <div style=" color:  orange; font-family: fantasy;">
+            <h3>${info}<br><hr></h3>
+        </div>
+        <a href="index"><button class="btn btn-danger">Главная страница</button></a><br>
         <form action="returnPizza" method="POST">
             <ul>
                 <c:forEach var="historyItem" items="${listHistories}">
-                    <li>${historyItem.id}. ${historyItem.buyer.name} ${historyItem.buyer.surname} заказал пиццу ${historyItem.product.name}</li>
+                    <li>${historyItem.id}. ${historyItem.buyer.name} ${historyItem.buyer.surname} заказал пиццу: ${historyItem.product.name}</li>
                 </c:forEach>
             </ul>
             <br>
-            Номер позиции возврата:<br>
-            <input type="text" name="returnHistoryId">
-            <input type="submit" value="Вернуть пиццу">
+            Номер заказа:<br>
+            <input type="text" name="returnHistoryId"><br><br>
+            <input type="submit" class="btn btn-danger" value="Подтвердить">
+            </div>
+        </div>
+    
         </form>
     </body>
 </html>

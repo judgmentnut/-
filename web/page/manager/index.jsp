@@ -20,7 +20,8 @@
         <a href="showAddNewProduct"><button class="btn btn-danger">Добавить пиццу</button></a><br><br>
         <a href="showListBuyers"><button class="btn btn-danger">Список покупателей</button></a><br><br>
         <a href="showListProducts"><button class="btn btn-danger">Меню</button></a><br><br>
-        <a href="showPageForGiveProduct"><button class="btn btn-danger">Заказ пиццы</button></a><br><br>
+        
+        <a href="showReturnPizza"><button class="btn btn-danger">Окончание заказов</button></a><br><br>
         </div>
         </div>
         </div>

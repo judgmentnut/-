@@ -117,9 +117,23 @@ public class ManagerController extends HttpServlet {
                     request.getRequestDispatcher(PagePathLoader.getPagePath("managerIndex")).forward(request, response);
                     return;
                 }       
-            default:   
-                request.setAttribute("info", "Нет такой странички");
-                request.getRequestDispatcher(PagePathLoader.getPagePath("managerIndex")).forward(request, response);         
+                 product = history.getProduct();
+                if(product.getQuantity()>product.getCount()){
+                    product.setCount(product.getCount()+1);
+                    productFacade.edit(product);
+                    history.setDateEnd(c.getTime());
+                    historyFacade.edit(history);
+                    request.setAttribute("info", "Заказ на пиццу: "+product.getName()+" завершён");
+                }else{
+                    request.setAttribute("info", "Все заказы доставлены!");
+                }       
+                request.getRequestDispatcher(PagePathLoader.getPagePath("managerIndex")).forward(request, response);
+                break;
+                
+                
+                
+                
+                
         }
             
     }
