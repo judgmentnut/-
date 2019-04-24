@@ -1,7 +1,7 @@
-<div class="col-md-12" style="font-family: fantasy;">
+<div class="col-md-12" style="font-family: fantasy;"><br>
         <H3>Добро пожаловать в нашу пиццерию </H3><br>
        
-        <a>${info}</a><br>
+        ${info}
         
 
    
