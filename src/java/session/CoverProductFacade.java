@@ -33,7 +33,7 @@ public class CoverProductFacade extends AbstractFacade<CoverProduct> {
     
     public Cover findCover(Product product) {
         try {
-            CoverProduct coverProduct = (CoverProduct) em.createQuery("SELECT cb FROM CoverProduct cb WHERE cb.product = :product")
+            CoverProduct coverProduct = (CoverProduct) em.createQuery("SELECT cp FROM CoverProduct cp WHERE cp.product = :product")
                     .setParameter("product", product)
                     .getSingleResult();
             return coverProduct.getCover();

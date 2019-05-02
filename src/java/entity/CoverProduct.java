@@ -92,7 +92,7 @@ public class CoverProduct implements Serializable {
 
     @Override
     public String toString() {
-        return "CoverBook{" 
+        return "CoverProduct{" 
                 + "id=" + id 
                 + ", product=" + product.getName()
                 + ", cover=" + cover.getName()

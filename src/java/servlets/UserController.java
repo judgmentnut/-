@@ -29,7 +29,9 @@ import utils.PagePathLoader;
 @WebServlet(name = "UserController", urlPatterns = {
     "/showChangePassword",
     "/changePassword",
-    "/showListProducts"
+    "/showListProducts",
+    "/showPizza"
+
     
     
 })
@@ -92,13 +94,14 @@ public class UserController extends HttpServlet {
                 request.setAttribute("info", "Список продуктов найден");
                 request.getRequestDispatcher(PagePathLoader.getPagePath("showListProducts")).forward(request, response);
                 break;
+        
             case "/showChangePassword":
                 String username = regUser.getBuyer().getName()+" "+regUser.getBuyer().getSurname();
                 request.setAttribute("username", username);
                 String login = regUser.getLogin();
                 request.setAttribute("login", login);
                 request.getRequestDispatcher(PagePathLoader.getPagePath("changePassword")).forward(request, response);
-                break;
+                break;   
             case "/changePassword":
                 String oldPassword = request.getParameter("oldPassword");
                 String encriptOldPassword = encription.getEncriptionPass(oldPassword);
@@ -117,14 +120,16 @@ public class UserController extends HttpServlet {
                 request.getRequestDispatcher("/logout");
                 request.getRequestDispatcher("/showLogin").forward(request, response);
                 break;  
-            case "/showProduct":
-                String productId = request.getParameter("productId");
-                Product product = productFacade.find(new Long(productId));
-                Cover cover = coverProductFacade.findCover(product);
+            case "/showPizza":
+                 String productId = request.getParameter("productId");
+                 Product product = productFacade.find(new Long(productId));
+                 Cover cover = coverProductFacade.findCover(product);
                 request.setAttribute("cover", cover);
                 request.setAttribute("product", product);
-                request.getRequestDispatcher(PagePathLoader.getPagePath("showProduct")).forward(request, response);
+                request.getRequestDispatcher(PagePathLoader.getPagePath("showPizza")).forward(request, response);
                 break;
+                
+               
         }
    }
     
