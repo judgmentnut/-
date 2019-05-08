@@ -19,7 +19,8 @@ public class RoleLogic {
         DIRECTOR,
         MANAGER,
         SELLER,
-        CUSTOMER};
+        CUSTOMER,
+        COOK};
     
     private RoleFacade roleFacade;
     private UserRolesFacade userRolesFacade;
@@ -94,6 +95,11 @@ public class RoleLogic {
                     break;
                 case "CUSTOMER":
                     newRole = this.getRole(ROLE.CUSTOMER.toString());
+                    ur.setRole(newRole);
+                    userRolesFacade.create(ur);
+                    break;
+                case "COOK":
+                    newRole = this.getRole(ROLE.COOK.toString());
                     ur.setRole(newRole);
                     userRolesFacade.create(ur);
                     break;

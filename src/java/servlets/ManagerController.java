@@ -1,6 +1,7 @@
 package servlets;
 
 import entity.Cover;
+import entity.CoverProduct;
 import entity.History;
 import entity.Product;
 import entity.User;
@@ -95,6 +96,13 @@ public class ManagerController extends HttpServlet {
                 String price = request.getParameter("price");
                 Product product = new Product(new Integer(price), name, new Integer(count));
                 productFacade.create(product);
+                String coverId = request.getParameter("coverId");
+                Cover cover = coverFacade.find(new Long(coverId));
+                CoverProduct coverProduct = new CoverProduct(product, cover);
+                coverProductFacade.create(coverProduct);
+                request.setAttribute("info", "Продукт \""+product.getName()+"\"добавлен");
+                request.getRequestDispatcher("/showAddNewProduct").forward(request, response);
+                request.getRequestDispatcher(PagePathLoader.getPagePath("managerIndex")).forward(request, response);
                 request.setAttribute("info", "Продукт \""+product.getName()+"\"добавлен");
                 request.getRequestDispatcher("/showAddNewProduct").forward(request, response);
                 break;

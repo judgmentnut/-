@@ -14,5 +14,6 @@ public enum ROLE {
     DIRECTOR,
     MANAGER,
     SELLER,
-    CUSTOMER
+    CUSTOMER,
+    COOK
 }
