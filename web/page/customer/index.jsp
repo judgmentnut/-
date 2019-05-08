@@ -8,7 +8,7 @@
     <body><div class="col-md-12">
         <div style=" font-family: fantasy;">
         <H1>Добро пожаловать в нашу пиццерию</H1>
-        <div style=" color:  orange; font-family: cursive;">
+        <div style=" color:  orange; font-family: fantasy;">
             <h3>${info}<br><hr></h3>
         </div>
         <div style=" font-family: fantasy;">

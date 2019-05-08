@@ -14,8 +14,9 @@
         <a href="index"><button class="btn btn-danger">Главная страница</button></a><br><hr>
         <ul>
             <c:forEach var="product" items="${listProducts}">
-                <li>${product.name}, ${product.price}, ${product.count}
+                <li><a href="showPizza?productId=${product.id}">${product.name}, ${product.price}$, ${product.count} ct. </a>
             </c:forEach>
+                 
         </ul>
         </div>
         </div>

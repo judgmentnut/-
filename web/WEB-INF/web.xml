@@ -20,6 +20,7 @@
             <url-pattern>/page/admin/changePassword.jsp</url-pattern>
             <url-pattern>/showRegistration.jsp</url-pattern>
             <url-pattern>/page/seller/showListBuyers.jsp</url-pattern>
+            <url-pattern>/page/seller/showActiveOrders.jsp</url-pattern>
             <url-pattern>/page/admin/index.jsp</url-pattern>
             <url-pattern>/page/seller/index.jsp</url-pattern>
             <url-pattern>/page/director/showChangeRole.jsp</url-pattern>

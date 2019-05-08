@@ -27,6 +27,7 @@ import utils.PagePathLoader;
     "/showListBuyers",
     "/showPageForGiveProduct",
     "/giveProduct",
+    "/showActiveOrders"
     
     
     
@@ -78,6 +79,13 @@ public class SellerController extends HttpServlet {
                 
                 request.getRequestDispatcher(PagePathLoader.getPagePath("showListBuyers")).forward(request, response);
                 break;
+                
+            case"/showActiveOrders":
+                    List<History> listHistories = historyFacade.findGivenPizza();
+                request.setAttribute("listHistories", listHistories);
+                request.getRequestDispatcher(PagePathLoader.getPagePath("showActiveOrders")).forward(request, response);
+            break;     
+                
                 
             case "/showPageForGiveProduct":
                 List<Product> listProducts = productFacade.findAll();
