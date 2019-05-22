@@ -10,15 +10,21 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="public/dist/css/lightbox.min.css">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  
+        <link rel="stylesheet" href="public/css/bootstrap.min.css">  
+        <link href="public/css/font-awesome.min.css" rel="stylesheet">		
+        <link rel="stylesheet" href="public/css/templatemo-style.css">  
         <title>Пиццерия</title>
     </head>
-    <body><div class="col-md-12">
-        <div style="font-family: fantasy;">
+    <body><div class="col-md-8 offset-md-1" >
+        <div >
         <h1>Завершение заказа</h1>
-        <div style=" color:  orange; font-family: fantasy;">
-            <h3>${info}<br><hr></h3>
+        <div class="alert alert-info">
+         ${info}
         </div>
-        <a href="index"><button class="btn btn-danger">Главная страница</button></a><br>
+        <a href="index"><button class="btn btn-outline-success my-2 my-sm-0">Главная страница</button></a><br>
         <form action="returnPizza" method="POST">
             <ul>
                 <c:forEach var="historyItem" items="${listHistories}">
@@ -28,7 +34,7 @@
             <br>
             Номер заказа:<br>
             <input type="text" name="returnHistoryId"><br><br>
-            <input type="submit" class="btn btn-danger" value="Подтвердить">
+            <input type="submit" class="btn btn-outline-success my-2 my-sm-0" value="Подтвердить">
             </div>
         </div>
     

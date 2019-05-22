@@ -6,12 +6,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Магазин</title>
     </head>
-    <body><div class="col-md-12">
-        <div style=" font-family: fantasy;">
+    <body><div class="col-md-8 offset-md-1" >
+        <div >
         <h1>Добавить продукт</h1>
         ${info}<br>
-        <a href="index"><button class="btn btn-danger">Главная страница</button></a><br><br>
-        <a href="showUploadFile"><button class="btn btn-danger">Загрузить изображение</button></a><br><hr>
+        <a href="index"><button class="btn btn-outline-success my-2 my-sm-0">Главная страница</button></a><br><br>
+        <a href="showUploadFile"><button class="btn btn-outline-success my-2 my-sm-0">Загрузить изображение</button></a><br><hr>
         <form action="addNewProduct" method="POST">
             Название:<br>
             <input type="text" name="name"><br>
@@ -27,7 +27,7 @@
                 </c:forEach>
             </select>
             <br><hr>
-            <input type="submit" class="btn btn-danger" value="Добавить">
+            <input type="submit" class="btn btn-outline-success my-2 my-sm-0" value="Добавить">
             </div>
         </div>
         </form>

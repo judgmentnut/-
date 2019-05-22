@@ -12,7 +12,7 @@
 
     <body>
 
-        <div class="col-md-4 offset-md-4"  style="font-family: fantasy;">
+        <div class="col-md-4 offset-md-4" >
             <h1 style="text-align: center">Войдите!</h1>
             <form action="login" method="POST">
                 <div class="form-group">
@@ -25,7 +25,7 @@
                 </div>
                 <input type="submit" class="btn btn-success" value="Вход"><br>
                 <br>
-                <a class="nav-link" href="index">Главная страница</a><br>
+                <a class="btn btn-outline-success my-2 my-sm-0" href="index">Главная страница</a><br>
             </form>
         </div>
 

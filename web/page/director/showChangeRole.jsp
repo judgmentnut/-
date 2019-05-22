@@ -6,15 +6,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Admin panel</title>
     </head>
-    <body><div class="col-md-12">
-        <div style=" font-family: fantasy;">
+    <body><div class="col-md-8 offset-md-1" >
+        <div>
         <h1>Страница Админа</h1>
         Список пользователей:
         <BR><hr>
         <form action="changeRole" method="POST">
             <c:forEach var="role" items="${listRoles}">
                 <c:if test="${role.id == 3}">
-                    <p><input name="roleId" type="radio" checked value="${role.id}">${role.name}</p>
+                    <p><input name="roleId"  type="radio" checked value="${role.id}">${role.name}</p>
                 </c:if>
                 <c:if test="${role.id ne 3}">
                     <p><input name="roleId" type="radio" value="${role.id}">${role.name}</p>
@@ -28,7 +28,7 @@
                 </c:forEach>
             </select>
                     <br><br>
-            <p><input type="submit" class="btn btn-danger" value="Назначить"></p>
+            <p><input type="submit" class="btn btn-outline-success my-2 my-sm-0" value="Назначить"></p>
             <a href="index">Главная страница</a><br>
             </div>
         </div>

@@ -12,62 +12,42 @@
         <title>Админ</title>
     </head>
     <body><div class="col-md-12">
-<<<<<<< HEAD
-            <div style=" font-family: fantasy;">
+
+            <div>
                 <strong><H1>Добро пожаловать в нашу пиццерию!</H1></strong>
             </div>
-            <div style=" color:  orange; font-family: fantasy;">
-                <h3>${info}</h3><br>
-            </div>
+           
+                <div class="alert alert-info">
+                ${info}
+                </div>
+      
 
-            <div style=" font-family: fantasy;">
+            <div>
                 <li class="nav-item ">               
-                    <a class="nav-link" href="logout">Выйти</a><br><br>
+                    <a class="btn btn-outline-success my-2 my-sm-0" href="logout">Выйти</a><br><br>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link"  href="showChangePassword">Изменить пароль</a><br>
+                    <a class="btn btn-outline-success my-2 my-sm-0"  href="showChangePassword">Изменить пароль</a><br>
                 </li>
                 <br><hr>
                 <li class="nav-item ">
-                    <a class="nav-link" href="showChangeRole">Изменить роль</a><br><br>
+                    <a class="btn btn-outline-success my-2 my-sm-0" href="showChangeRole">Изменить роль</a><br><br>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="showRegistration">Добавить покупателя</a><br><br>
+                    <a class="btn btn-outline-success my-2 my-sm-0" href="showRegistration">Добавить покупателя</a><br><br>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="showAddNewProduct">Добавить пиццу</a><br><br>
+                    <a class="btn btn-outline-success my-2 my-sm-0" href="showAddNewProduct">Добавить пиццу</a><br><br>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="showListBuyers">Список покупателей</a><br><br>
+                    <a class="btn btn-outline-success my-2 my-sm-0" href="showListBuyers">Список покупателей</a><br><br>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="showListProducts">Меню</a><br><br>
+                    <a class="btn btn-outline-success my-2 my-sm-0" href="showListProducts">Меню</a><br><br>
                 </li>
                 <!--<a href="showPageForGiveProduct"><button class="btn btn-danger">Заказ пиццы</button></a><br><br>-->
             </div>
-=======
-        <div style=" font-family: fantasy;">
-            <strong><H1>Добро пожаловать в нашу пиццерию!</H1></strong>
-        </div>
-        <div style=" color:  orange; font-family: fantasy;">
-            <h3>${info}</h3><br>
-    </div>
-    
-    <div style=" font-family: fantasy;">
-        <a href="logout"><button class="btn btn-danger">Выйти</button></a><br><br>
-        <a href="showChangePassword"><button class="btn btn-danger">Изменить пароль</button></a><br>
-        <br><hr>
-        <a href="showChangeRole"><button class="btn btn-danger">Изменить роль</button></a><br><br>
-       
-        <a href="showRegistration"><button class="btn btn-danger">Добавить покупателя</button></a><br><br>
-        <a href="showAddNewProduct"><button class="btn btn-danger">Добавить пиццу</button></a><br><br>
-        <a href="showListBuyers"><button class="btn btn-danger">Список покупателей</button></a><br><br>
-        <a href="showActiveOrders"><button class="btn btn-danger">Список активных заказов</button></a><br><br>
-        <a href="showListProducts"><button class="btn btn-danger">Меню</button></a><br><br>
-        <!--<a href="showPageForGiveProduct"><button class="btn btn-danger">Заказ пиццы</button></a><br><br>-->
-    </div>
->>>>>>> dc7e5ec830d88fa439a5df8a032a69045cb246d5
-        </div>
+
 
     </body>
 </html>

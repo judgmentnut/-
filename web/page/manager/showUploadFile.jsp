@@ -11,14 +11,14 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Загрузка файла</title>
     </head>
-    <body><div class="col-md-12">
-        <div style=" font-family: fantasy;">
+    <body><div class="col-md-8 offset-md-1" >
+        <div >
         <h1>Загрузка файла!</h1>
         <p>${info}</p>
         <form action="uploadFile" method="POST" enctype="multipart/form-data">
             <input type="text" name="description"><br><hr>
-            <input type="file" class="btn btn-danger" name="file"><br><br>
-            <input type="submit" class="btn btn-danger" value="Загрузить">
+            <input type="file" class="btn btn-outline-success my-2 my-sm-0" name="file"><br><br>
+            <input type="submit" class="btn btn-outline-success my-2 my-sm-0" value="Загрузить">
             </div>
         </div>
         </form>

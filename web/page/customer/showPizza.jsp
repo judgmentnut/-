@@ -9,11 +9,17 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="public/dist/css/lightbox.min.css">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  
+        <link rel="stylesheet" href="public/css/bootstrap.min.css">  
+        <link href="public/css/font-awesome.min.css" rel="stylesheet">		
+        <link rel="stylesheet" href="public/css/templatemo-style.css">  
         <title>JSP Page</title>
     </head>
     <body>
          <h1>Просмотр</h1>
-        <p>${info}</p>
+         <div class="alert alert-info">${info}</div>
         <a href="index">На главную</a><br>
         Изображение: <br>
         <img src="insertFile/${cover.path}"><br>
