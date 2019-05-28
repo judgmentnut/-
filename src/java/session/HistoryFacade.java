@@ -6,6 +6,7 @@
 package session;
 
 import entity.History;
+import java.util.Date;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -41,5 +42,17 @@ public class HistoryFacade extends AbstractFacade<History> {
         }
         
     }
+    
+     public List<History> findByRange(Date fromDate, Date toDate) {
+        try {
+            return em.createQuery("SELECT h FROM History h WHERE h.dateBegin > :fromDate AND h.dateBegin < :toDate")
+                    .setParameter("fromDate", fromDate)
+                    .setParameter("toDate", toDate)
+                    .getResultList();
+        } catch (Exception e) {
+            return null;
+        }
+    }
+    
     
 }
