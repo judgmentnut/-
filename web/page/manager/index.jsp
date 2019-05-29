@@ -22,6 +22,7 @@
         
         <a href="showListBuyers">Список покупателей</a><br><br>
         <a href="showActiveOrders">Список активных заказов</a><br><br>
+<<<<<<< HEAD
         <a href="showListProducts">Меню</a><br><br>
         <a href="showStatistic">stats</a><br><br>
         <a href="showReturnPizza">Окончание заказов</a><br><br>
@@ -32,6 +33,19 @@
         <a href="showChangePassword"><button class="btn btn-outline-success my-2 my-sm-0">Изменить пароль</button></a><br>
         <br>
         
+=======
+        <a href="showStatistic">Статистика</a><br><br>
+        <a href="showListProducts">Меню</a><br><br>
+        
+        <a href="showReturnPizza">Окончание заказов</a><br><br>
+       </nav>
+      
+        <br>
+        <a href="logout"><button class="btn btn-outline-success my-2 my-sm-0">Выйти</button></a><br><br>
+        <a href="showChangePassword"><button class="btn btn-outline-success my-2 my-sm-0">Изменить пароль</button></a><br>
+        <br>
+        
+>>>>>>> 0fcf8fe5cbbd48cb0530d41c6c82bffe99c41dc7
         <div class="alert alert-info">
           ${info}
         </div>

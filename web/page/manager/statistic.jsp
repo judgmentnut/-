@@ -7,7 +7,11 @@
         <title>Статистика</title>
     </head>
     <body>
+<<<<<<< HEAD
         <h1>Проделанные заказы</h1>
+=======
+        <h1>Книги читаемые</h1>
+>>>>>>> 0fcf8fe5cbbd48cb0530d41c6c82bffe99c41dc7
         <form action="showStatistic" method="POST">
             Период от:
             ${dateFrom}
@@ -48,6 +52,7 @@
                     <option value="${i}" <c:if test="${i eq toYear}">selected</c:if>>${i}</option>
                 </c:forEach>
             </select>
+<<<<<<< HEAD
             <br><br>
             <input type="submit" class="btn btn-outline-success my-2 my-sm-0" name="timeRange" value="Показать">
         
@@ -64,6 +69,22 @@
        </form>  
         <br>
         <a href="index"><button class="btn btn-outline-success my-2 my-sm-0">Главная страница</button></a><br><br>
+=======
+            <br>
+            <input type="submit" name="timeRange" value="Показать">
+        
+        <br>
+        В период от ${fromDay}.${fromMonth}.${fromYear} до ${toDay}.${toMonth}.${toYear} были взяты следующие книги:
+        <c:forEach var="history" items="${listHistories}">
+            <p>"${history.product.name}. ${history.product.name}" - книгу брал: ${history.user.name} ${history.user.surname}</p>
+        </c:forEach>
+            <h2>Книги по популярности</h2>
+            <c:forEach var="entry" items="${sortedMapProductsRate}" varStatus="count">
+            <p>${count.index+1}. "${entry.key.name} | Рейтинг ${entry.value}</p>
+        </c:forEach>  
+        <input type="submit" name="popProducts" value="Показать">    
+       </form>    
+>>>>>>> 0fcf8fe5cbbd48cb0530d41c6c82bffe99c41dc7
             
     </body>
 </html>

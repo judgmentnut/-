@@ -61,15 +61,6 @@ public class ManagerController extends HttpServlet {
     
     
     
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -117,6 +108,10 @@ public class ManagerController extends HttpServlet {
             case "/showAddNewBuyer":
                 request.getRequestDispatcher(PagePathLoader.getPagePath("showAddNewBuyer")).forward(request, response);
                 break;
+<<<<<<< HEAD
+=======
+                
+>>>>>>> 0fcf8fe5cbbd48cb0530d41c6c82bffe99c41dc7
             case "/showStatistic":
                 String timeRange = request.getParameter("timeRange");
                 String popProducts = request.getParameter("popProducts");
@@ -139,9 +134,12 @@ public class ManagerController extends HttpServlet {
                     );
                     Date fromDate = DateUtils.getStartOfDay(DateUtils.asDate(fromLd));
                     Date toDate = DateUtils.getStartOfDay(DateUtils.asDate(toLd));
+<<<<<<< HEAD
 //                    SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
 //                    request.setAttribute("dateFrom", sdf.format(fromDate));
 //                    request.setAttribute("dateTo", sdf.format(toDate));
+=======
+>>>>>>> 0fcf8fe5cbbd48cb0530d41c6c82bffe99c41dc7
                     List<History> listHistories = historyFacade.findByRange(fromDate,toDate);
                     request.setAttribute("listHistories", listHistories);
                     request.setAttribute("fromDay", fromDay);
@@ -153,8 +151,12 @@ public class ManagerController extends HttpServlet {
                 }
                 if(popProducts != null){
                     List<History> listHistories = historyFacade.findAll();
+<<<<<<< HEAD
                     List<Product>listProducts = new ArrayList<>();
             
+=======
+                    List<Product> listProducts = new ArrayList<>();
+>>>>>>> 0fcf8fe5cbbd48cb0530d41c6c82bffe99c41dc7
                     Map<Product,Integer> mapProductsRate = new HashMap<>();
                     for (int i = 0; i < listHistories.size(); i++) {
                         History history = listHistories.get(i);
