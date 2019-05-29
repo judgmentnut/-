@@ -14,14 +14,14 @@
         <a href="showUploadFile"><button class="btn btn-outline-success my-2 my-sm-0">Загрузить изображение</button></a><br><hr>
         <form action="addNewProduct" method="POST">
             Название:<br>
-            <input type="text" name="name"><br>
+            <input type="text" required name="name"><br>
             Цена:<br>
-            <input type="text" name="price"><br>
+            <input type="text" required name="price"><br>
             Количество :<br>
-            <input type="text" name="count"><br>
+            <input type="text" required name="count"><br>
             <br>
             Фото:
-            <select name="coverId">
+            <select required name="coverId">
                 <c:forEach var="cover" items="${listCovers}">
                     <option value="${cover.id}">${cover.name}</option>
                 </c:forEach>

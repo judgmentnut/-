@@ -91,7 +91,7 @@ public class UserController extends HttpServlet {
                 }
                 
                 request.setAttribute("listProducts", listProducts);
-                request.setAttribute("info", "Список продуктов найден");
+                request.setAttribute("info", "Меню найдено");
                 request.getRequestDispatcher(PagePathLoader.getPagePath("showListProducts")).forward(request, response);
                 break;
         

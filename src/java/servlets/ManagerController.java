@@ -6,9 +6,14 @@ import entity.History;
 import entity.Product;
 import entity.User;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,8 +27,10 @@ import session.BuyerFacade;
 import session.CoverFacade;
 import session.CoverProductFacade;
 import session.UserRolesFacade;
+import utils.DateUtils;
 import utils.Encription;
 import utils.PagePathLoader;
+import utils.SortUtils;
 
 /**
  *
@@ -37,6 +44,7 @@ import utils.PagePathLoader;
     "/showUploadFile",
     "/showReturnPizza",
     "/returnPizza",
+    "/showStatistic"
     
     
     
@@ -100,7 +108,7 @@ public class ManagerController extends HttpServlet {
                 Cover cover = coverFacade.find(new Long(coverId));
                 CoverProduct coverProduct = new CoverProduct(product, cover);
                 coverProductFacade.create(coverProduct);
-                request.setAttribute("info", "Продукт \""+product.getName()+"\"добавлен");
+                request.setAttribute("info", "Пицца \""+product.getName()+"\"добавлена");
                 request.getRequestDispatcher("/showAddNewProduct").forward(request, response);
                 request.getRequestDispatcher(PagePathLoader.getPagePath("managerIndex")).forward(request, response);
                 request.setAttribute("info", "Продукт \""+product.getName()+"\"добавлен");
@@ -109,6 +117,65 @@ public class ManagerController extends HttpServlet {
             case "/showAddNewBuyer":
                 request.getRequestDispatcher(PagePathLoader.getPagePath("showAddNewBuyer")).forward(request, response);
                 break;
+            case "/showStatistic":
+                String timeRange = request.getParameter("timeRange");
+                String popProducts = request.getParameter("popProducts");
+                if(timeRange != null){
+                    String fromDay = request.getParameter("fromDay");
+                    String fromMonth = request.getParameter("fromMonth");
+                    String fromYear = request.getParameter("fromYear");
+                    String toDay = request.getParameter("toDay");
+                    String toMonth = request.getParameter("toMonth");
+                    String toYear = request.getParameter("toYear");
+                    LocalDate fromLd = LocalDate.of(
+                            new Integer(fromYear),
+                            new Integer(fromMonth),
+                            new Integer(fromDay)
+                    );
+                    LocalDate toLd = LocalDate.of(
+                            new Integer(toYear),
+                            new Integer(toMonth),
+                            new Integer(toDay)
+                    );
+                    Date fromDate = DateUtils.getStartOfDay(DateUtils.asDate(fromLd));
+                    Date toDate = DateUtils.getStartOfDay(DateUtils.asDate(toLd));
+//                    SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
+//                    request.setAttribute("dateFrom", sdf.format(fromDate));
+//                    request.setAttribute("dateTo", sdf.format(toDate));
+                    List<History> listHistories = historyFacade.findByRange(fromDate,toDate);
+                    request.setAttribute("listHistories", listHistories);
+                    request.setAttribute("fromDay", fromDay);
+                    request.setAttribute("fromMonth", fromMonth);
+                    request.setAttribute("fromYear", fromYear);
+                    request.setAttribute("toDay", toDay);
+                    request.setAttribute("toMonth", toMonth);
+                    request.setAttribute("toYear", toYear);
+                }
+                if(popProducts != null){
+                    List<History> listHistories = historyFacade.findAll();
+                    List<Product>listProducts = new ArrayList<>();
+            
+                    Map<Product,Integer> mapProductsRate = new HashMap<>();
+                    for (int i = 0; i < listHistories.size(); i++) {
+                        History history = listHistories.get(i);
+                        if(!listProducts.contains(history.getProduct())){
+                        listProducts.add(history.getProduct());
+                            mapProductsRate.put(history.getProduct(), 1);
+                        }else{
+                            mapProductsRate.merge(history.getProduct(), 1, Integer::sum);
+                        }
+                    }
+                    Map<Product,Integer> sortedMapProductsRate = SortUtils.sortMapReverseByValue(mapProductsRate);
+                    request.setAttribute("sortedMapProductsRate", sortedMapProductsRate);
+                }
+                
+                
+                request.getRequestDispatcher(PagePathLoader.getPagePath("showStatistic"))
+                        .forward(request, response);
+                break;    
+                
+                
+                
             case "/showUploadFile":
                 request.getRequestDispatcher(PagePathLoader.getPagePath("showUploadFile")).forward(request, response);
                 break;

@@ -16,6 +16,7 @@
             <url-pattern>/page/manager/showUploadFile.jsp</url-pattern>
             <url-pattern>/page/seller/showPageForGiveProduct.jsp</url-pattern>
             <url-pattern>/showLogin.jsp</url-pattern>
+            <url-pattern>/page/manager/statistic.jsp</url-pattern>
             <url-pattern>/page/customer/showListProducts.jsp</url-pattern>
             <url-pattern>/page/admin/changePassword.jsp</url-pattern>
             <url-pattern>/showRegistration.jsp</url-pattern>
