@@ -10,9 +10,10 @@
         <link rel="stylesheet" href="public/css/templatemo-style.css">  
     </head>
 
-    <body>
+    <body >
 
         <div class="col-md-4 offset-md-4" >
+            <div>
             <h1 style="text-align: center">Войдите!</h1>
             <form action="login" method="POST">
                 <div class="form-group">
@@ -27,6 +28,7 @@
                 <br>
                 <a class="btn btn-outline-success my-2 my-sm-0" href="index">Главная страница</a><br>
             </form>
+            </div>
         </div>
 
     </body>

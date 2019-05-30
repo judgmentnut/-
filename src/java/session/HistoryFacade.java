@@ -6,6 +6,7 @@
 package session;
 
 import entity.History;
+import entity.Product;
 import java.util.Date;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -42,6 +43,13 @@ public class HistoryFacade extends AbstractFacade<History> {
         }
         
     }
+    
+     public List<History> find(Product product){
+        return em.createQuery("SELECT h FROM History h WHERE h.product = :product")
+                .setParameter("product", product)
+                .getResultList();
+    }
+    
     
      public List<History> findByRange(Date fromDate, Date toDate) {
         try {

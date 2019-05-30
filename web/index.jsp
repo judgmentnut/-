@@ -9,16 +9,19 @@
         <link rel="stylesheet" href="public/css/bootstrap.min.css">  
         <link href="public/css/font-awesome.min.css" rel="stylesheet">		
         <link rel="stylesheet" href="public/css/templatemo-style.css">  
-   
+        <style>
+  
+  </style>
     </head>
 
-    <body style="background: #F8FDE3;">
-
+    <body >
+        
         <div class="col-md-12">
+            <div >
             <H3>Добро пожаловать в нашу пиццерию </H3><br>
 
 
-            <div class="alert alert-success">
+            <div class="alert alert-info">
             ${info}
             </div>
 
@@ -26,9 +29,9 @@
             <a class="btn btn-success my-2 my-sm-0" href="showLogin">Войти</a><br><br>
             <a class="btn btn-success my-2 my-sm-0" href="showRegistration">Зарегистрироваться</a>
 
-
-
+            </div>
         </div>
+        
 
     </body>
 </html>

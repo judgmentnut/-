@@ -18,13 +18,14 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <div class="col-md-12 offset-md-4" >
          <h1>Просмотр</h1>
          <div class="alert alert-info">${info}</div>
-        <a href="index">На главную</a><br>
+        <a href="index" class="btn btn-success-outline">На главную</a><br>
         Изображение: <br>
         <img src="insertFile/${cover.path}"><br>
         Название: ${product.name}<br>
         Доступно: ${product.quantity}<br>
-      
+        </div>
     </body>
 </html>

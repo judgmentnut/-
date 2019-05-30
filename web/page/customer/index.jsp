@@ -11,20 +11,24 @@
         <link rel="stylesheet" href="public/css/templatemo-style.css">  
         <title>Покупатель</title>
     </head>
-    <body><div class="col-md-12">
-        <div>
-        <H1>Добро пожаловать в нашу пиццерию</H1>
-        <div class="alert alert-info">
-            ${info}
-        </div>
-        <div >
-        <a href="logout"><button class="btn btn-outline-success my-2 my-sm-0">Выйти</button></a><br><br>
-        <a href="showChangePassword"><button class="btn btn-outline-success my-2 my-sm-0">Изменить пароль</button></a><br>
-        <br><hr>
+    <body>
         
+        <H1>Добро пожаловать в нашу пиццерию</H1>
+        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <a href="logout">Выйти</a><br><br>
+        <a href="showChangePassword">Изменить пароль</a><br><br>
+
+            
+        </nav>
+        
+        <div >
+        
+        <br>
         <a href="showListProducts"><button class="btn btn-outline-success my-2 my-sm-0">Меню</button></a><br>
-        </div>
-        </div>
+        </div><br><div class="alert alert-info">
+            ${info}
+        </div><br>
+       
         </div>
         
     </body>
